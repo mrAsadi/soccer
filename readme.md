@@ -1,2 +1,0 @@
-# soccer
-Soccer Test Project
