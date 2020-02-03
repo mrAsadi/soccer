@@ -12,11 +12,17 @@
 */
 
 
-
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('login', function () {
-    return view('login');
+
+Route::get('login', [ 'as' => 'login', 'uses' => 'AuthController@login']);
+
+Route::middleware(['auth'])->group(function() {
+    Route::resource('players', 'PlayerController');
+    Route::resource('teams', 'TeamController');
 });
+
+
+
