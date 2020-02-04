@@ -21,4 +21,9 @@ class AuthController extends  AppBaseController
     {
         return view('auth.login');
     }
+
+    public function register(Request $request)
+    {
+        return view('auth.register');
+    }
 }

@@ -6,7 +6,9 @@
             <form action="">
                 <input type="text" placeholder="username" name="username">
                 <input type="password" placeholder="password" name="password">
-                <button type="submit">login</button>
+                <input type="password" placeholder="confirm password" name="c_password">
+                <input type="email" placeholder="email" name="email">
+                <button type="submit">register</button>
             </form>
 
         </div>

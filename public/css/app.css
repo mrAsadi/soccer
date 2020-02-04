@@ -1,7 +1,353 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);body {
+@import url(https://fonts.googleapis.com/css?family=Nunito);*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgba(114, 86, 57, 0.58);
+  opacity: 1;
+  /* Firefox */
+  text-transform: uppercase;
+}
+
+::-moz-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgba(114, 86, 57, 0.58);
+  opacity: 1;
+  /* Firefox */
+  text-transform: uppercase;
+}
+
+:-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgba(114, 86, 57, 0.58);
+  opacity: 1;
+  /* Firefox */
+  text-transform: uppercase;
+}
+
+::-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgba(114, 86, 57, 0.58);
+  opacity: 1;
+  /* Firefox */
+  text-transform: uppercase;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgba(114, 86, 57, 0.58);
+  opacity: 1;
+  /* Firefox */
+  text-transform: uppercase;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgba(114, 86, 57, 0.58);
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: rgba(114, 86, 57, 0.58);
+}
+
+html {
+  font-size: 12px;
+}
+
+body {
   background: #3490dc;
+  height: 100vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(#A5C197), to(#495145));
+  background: linear-gradient(#A5C197, #495145);
+  color: black;
+  font-family: "Nunito", sans-serif;
+}
+
+body ul {
+  list-style: none;
+}
+
+body a {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.menu-icon {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  height: 1em;
+  position: absolute;
+  top: 3em;
+  left: 3em;
+  cursor: pointer;
+  opacity: 0.5;
+  z-index: 9999999;
+}
+
+.menu-icon:hover {
+  opacity: 1;
+}
+
+.menu-line {
+  width: 3em;
+  height: 1px;
+  border: 1px solid;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+
+.menu-line1 {
+  position: absolute;
+  -webkit-transform: rotate(35deg);
+          transform: rotate(35deg);
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+
+.menu-line2 {
+  position: absolute;
+  -webkit-transform: rotate(-35deg);
+          transform: rotate(-35deg);
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+
+.menu-line1-off {
+  position: absolute;
+  -webkit-transform: translateY(-5px) rotate(0deg);
+          transform: translateY(-5px) rotate(0deg);
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+
+.menu-line2-off {
+  position: absolute;
+  -webkit-transform: translateY(5px) rotate(0deg);
+          transform: translateY(5px) rotate(0deg);
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+
+main {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+}
+
+main .sidebar {
+  width: 40vw;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  height: 100vh;
+  background: #7a7a7aed;
+  -webkit-transform: translateX(-50vw);
+          transform: translateX(-50vw);
+  -webkit-transition: -webkit-transform 0.3s ease-in;
+  transition: -webkit-transform 0.3s ease-in;
+  transition: transform 0.3s ease-in;
+  transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+main .sidebar .sidebar-wrapper ul {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  height: 10em;
+}
+
+main .sidebar .sidebar-wrapper ul li a {
+  font-size: 1.5rem;
+}
+
+main .show-menu {
+  -webkit-transform: translateX(0vw);
+          transform: translateX(0vw);
+  -webkit-transition: -webkit-transform 0.5s ease-out;
+  transition: -webkit-transform 0.5s ease-out;
+  transition: transform 0.5s ease-out;
+  transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+}
+
+main .container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#A5C197), to(#495145));
+  background: linear-gradient(#A5C197, #495145);
+  overflow: scroll;
+}
+
+main .container .logo {
+  position: fixed;
+  right: 1em;
+  top: 1em;
+  width: 4em;
+}
+
+main .content {
+  margin: 8em 2em;
+}
+
+main .content .team-item {
+  padding: 2em;
+  border-radius: 1em;
+  background: white;
+  box-shadow: 0px 0px 0px #564141;
+  border-radius: 1em;
+  margin-bottom: 4em;
+  -webkit-transform: translate3d(0px, 0px, 0px) scale(1);
+          transform: translate3d(0px, 0px, 0px) scale(1);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+main .content .team-item img {
+  width: 10em;
+}
+
+main .content .team-item ul {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  height: 6em;
+}
+
+main .content .team-item ul li {
+  height: 3.5em;
+  width: 3.5em;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 50%;
+  border: 1px solid gold;
+  margin-left: -0.8em;
+}
+
+main .content .team-item ul li:first-child {
+  margin-left: 0;
+}
+
+main .content .team-item a {
+  padding: 0.7em 3em;
+  background: #212121;
+  border-radius: 2em;
+  text-transform: lowercase;
+  /* font-weight: bold; */
+  color: white;
+  box-shadow: 1px 2px 6px #1a1a1aa8;
+  opacity: 0.8;
+  outline: none;
+  border: none;
+  margin-top: 2em;
+}
+
+main .content .team-item a:hover {
+  opacity: 1;
+}
+
+main .content .team-item:hover {
+  box-shadow: 1px 2px 7px #564141;
+  -webkit-transform: translate3d(1px, 1px, 1px) scale(1.025);
+          transform: translate3d(1px, 1px, 1px) scale(1.025);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+main .content form {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  padding: 2em;
+  border-radius: 1em;
+  background: white;
+  box-shadow: 0px 0px 0px #564141;
+  box-shadow: 1px 2px 7px #564141;
+}
+
+main .content form input {
+  border: none;
+  outline: none;
+  padding: 0.5em 0em;
+  border-bottom: 1px solid #72727254;
+  text-align: left;
+  margin: 1em;
+  width: 80%;
+}
+
+main .content form button {
+  padding: 0.7em 3em;
+  background: #212121;
+  border-radius: 2em;
+  text-transform: lowercase;
+  /* font-weight: bold; */
+  color: white;
+  box-shadow: 1px 2px 6px #1a1a1aa8;
+  opacity: 0.8;
+  outline: none;
+  border: none;
+  margin-top: 2em;
+  margin-top: 2em;
 }
 
