@@ -3,61 +3,9 @@
 
 // Variables
 @import 'variables';
+@import 'table';
+@import "mixin";
 
-@mixin flex-col-center{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-};
-
-@mixin flex-row-center{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-};
-
-@mixin flex-row-around{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-};
-
-@mixin flex-row-between{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-};
-
-@mixin flex-col-justify-between{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-@mixin soft-box{
-    padding: 2em;
-    border-radius: 1em;
-    background: white;
-    box-shadow: 0px 0px 0px #564141;
-}
-
-@mixin m-button{
-    padding: 0.7em 3em;
-    background: #212121;
-    border-radius: 2em;
-    text-transform: lowercase;
-    /* font-weight: bold; */
-    color: white;
-    box-shadow: 1px 2px 6px #1a1a1aa8;
-    opacity: 0.8;
-    outline: none;
-    border: none;
-    margin-top: 2em;
-}
 
 *,*::after,*::before{
     margin: 0;
@@ -433,3 +381,5 @@ main{
         }
     }
 }
+
+

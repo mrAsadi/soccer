@@ -18,7 +18,7 @@
 
             <div class="submit-area">
                 <img src="{{asset('img/submit.svg')}}" alt="">
-                <img src="{{asset('img/del.svg')}}" alt="">
+                <img src="{{asset('img/delete.svg')}}" alt="">
             </div>
 
 

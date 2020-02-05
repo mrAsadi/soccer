@@ -1,4 +1,192 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);*,
+@import url(https://fonts.googleapis.com/css?family=Nunito);.table .tr {
+  border-radius: 1em;
+  background: white;
+  box-shadow: 1px 1px 16px #564141;
+  margin: 4em 0;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+}
+
+.table .tr .header {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  background: #81c6c0d9;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  padding: 1em;
+}
+
+.table .tr .header .operations {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  height: 5em;
+}
+
+.table .tr .header .operations img {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.table .tr .header .fields {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+}
+
+.table .tr .header .fields img {
+  border-radius: 50%;
+  width: 4em;
+  height: 4em;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.table .tr .header .fields span {
+  font-size: 1.2rem;
+  margin-left: 1em;
+}
+
+.table .tr .body {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  padding: 1em;
+}
+
+.table .tr .body .player-info {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+}
+
+.table .tr .body .col {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  font-size: 1rem;
+  -webkit-box-pack: start;
+          justify-content: flex-start;
+  margin: 0.5em 0;
+}
+
+.table .tr .body .col span {
+  text-transform: capitalize;
+}
+
+.table .tr .body .bio {
+  margin-top: 0.5em;
+}
+
+@media all and (min-width: 768px) {
+  .table {
+    box-shadow: 1px 1px 16px #564141;
+  }
+
+  .table .tr {
+    border-radius: 0;
+    margin: 0;
+    box-shadow: none;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row;
+    -webkit-box-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+  }
+
+  .table .tr .header {
+    border-radius: 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+            flex-direction: row-reverse;
+    -webkit-box-pack: end;
+            justify-content: flex-end;
+  }
+
+  .table .tr .header .fields {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+            align-items: flex-start;
+    margin-left: 1.5em;
+    height: 6em;
+  }
+
+  .table .tr .body {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row;
+    -webkit-box-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+    padding: 0 1em;
+  }
+
+  .table .tr .body .player-info {
+    width: 20%;
+  }
+
+  .table .tr .body .bio {
+    margin-top: 0;
+    width: 80%;
+  }
+
+  .table .tr:nth-child(even) {
+    background: #c4c4c4;
+  }
+}
+
+*,
 *::after,
 *::before {
   margin: 0;
