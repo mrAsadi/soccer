@@ -36,4 +36,8 @@ class TeamController extends  AppBaseController
         return view('teams.index')
             ->with('teams', $teams);
     }
+
+    public function show($id){
+        return view('teams.view');
+    }
 }

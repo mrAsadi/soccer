@@ -35,7 +35,7 @@
       <div class="container">
           @yield('content')
 
-          <img class="logo" src="img/logo.png" alt="logo">
+          <img class="logo" src="{{asset('img/logo.png')}}" alt="logo">
       </div>
 
 

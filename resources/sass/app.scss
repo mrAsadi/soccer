@@ -266,5 +266,55 @@ main{
                 margin-top: 2em;
             }
         }
+
+        .team-wrapper{
+            @include flex-col-justify-between;
+            height:38em;
+            img{
+                width: 8em;
+            }
+            h1{
+                color: white;
+            }
+            h2{
+                color: #333333;
+            }
+            p{
+                text-align: justify;
+                font-size: .9rem;
+                line-height: 1.5em;
+                margin-top: 1em;
+            }
+            .players-section{
+                @include flex-row-between;
+                flex-wrap: wrap;
+                margin-top: 1em;
+
+                .player-item{
+                    @include flex-col-center;
+                    padding: 0.7em 0.4em 2em;
+                    background: white;
+                    border-radius: 1.5em;
+                    div{
+                        height: 4.5em;
+                        width: 4.5em;
+                        object-fit: contain;
+                        border-radius: 1.3em;
+                    }
+                    span{
+                        margin-top: 1em;
+                    }
+                }
+                .player-item:nth-child(3n-1){
+                    margin:1em;
+                }
+            }
+
+            h3{
+                margin-top: 1em;
+                padding-top: 1em;
+                border-top: 1px solid;
+            }
+        }
     }
 }

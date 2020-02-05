@@ -18,8 +18,11 @@ Route::get('/', function () {
 
 Route::get('login', [ 'as' => 'login', 'uses' => 'AuthController@login']);
 Route::get('register', [ 'as' => 'register', 'uses' => 'AuthController@register']);
+Route::resource('players', 'PlayerController');
+Route::resource('teams', 'TeamController');
 
-Route::middleware(['auth'])->group(function() {
-    Route::resource('players', 'PlayerController');
-    Route::resource('teams', 'TeamController');
-});
+//
+//Route::middleware(['auth'])->group(function() {
+//    Route::resource('players', 'PlayerController');
+//    Route::resource('teams', 'TeamController');
+//});
