@@ -66,7 +66,7 @@
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: rgba(114, 86, 57, 0.58);
+    color: rgba(0, 0, 0, 0.41);
     opacity: 1; /* Firefox */
     text-transform: uppercase;
 }
@@ -255,7 +255,7 @@ main{
                 border: none;
                 outline: none;
                 padding: 0.5em 0em;
-                border-bottom: 1px solid #72727254;
+                border-bottom: 1px solid #0000005e;
                 text-align: left;
                 margin: 1em;
                 width: 80%;
@@ -315,6 +315,121 @@ main{
                 padding-top: 1em;
                 border-top: 1px solid;
             }
+        }
+
+        .player-wrapper{
+            @include flex-col-justify-between;
+            height:38em;
+            color:white;
+            img{
+                max-width: 24em;
+                object-fit: cover;
+                object-position: center;
+
+            }
+
+            h3{
+                color: black;
+            }
+            p{
+                color: #333333;
+                text-align: justify;
+                font-size: 1rem;
+                line-height: 1.5em;
+                margin-top: 1em;
+            }
+            .teams-section{
+                @include flex-row-between;
+                flex-wrap: wrap;
+
+                .teams-section-item{
+                    @include flex-col-center;
+                    padding: 0.7em 0.4em 2em;
+
+                    div{
+                        height: 6em;
+                        width: 6em;
+                    }
+                    span{
+                        margin-top: 1em;
+                    }
+                }
+                .teams-section-item:nth-child(3n-1){
+                    margin:1em;
+                }
+            }
+
+            h3{
+                margin-top: 1em;
+                padding-top: 1em;
+                border-top: 1px solid;
+            }
+        }
+
+        .player-form{
+            background: none;
+            box-shadow: none;
+
+            .upload-area{
+                @include flex-col-center;
+                cursor: pointer;
+                opacity: .8;
+
+                .img-thumbnail{
+                    border-radius: 50%;
+                    width: 16em;
+                    height: 16em;
+                    object-fit: cover;
+                    object-position: center;
+                }
+
+                .img-upload{
+                    width: 3em;
+                    margin-top: -1em;
+                }
+            }
+
+            .upload-area:hover{
+                opacity: 1;
+            }
+
+            .submit-area{
+                @include flex-row-between;
+                width: 50%;
+                margin-top: 2em;
+
+                img{
+                    width: 4em;
+                    box-shadow: 1px 2px 6px #1a1a1aa8;
+                    cursor: pointer;
+                    border-radius: 50%;
+                    opacity: 0.7;
+                }
+
+                img:hover{
+                    opacity: 1;
+                }
+            }
+            input{
+                background: none;
+                border-bottom: 1px solid #ffffff94;
+                width: 100%;
+
+            }
+            textarea{
+                background-attachment: local;
+                background: none;
+                background-image:repeating-linear-gradient(transparent,transparent 31px, #ffffff94 32px, #ffffff94 32px, transparent 32px);
+                border: none;
+                outline: none;
+                text-align: left;
+                resize: none;
+                margin: 2em 0;
+                line-height: 3em;
+                height: 12em;
+                width: 100%;
+            }
+
         }
     }
 }

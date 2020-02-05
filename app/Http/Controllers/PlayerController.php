@@ -33,4 +33,13 @@ class PlayerController extends AppBaseController
             ->with('players', $players);
     }
 
+    public function show($id){
+        return view('players.view');
+    }
+
+    public function create()
+    {
+        return view('players.create');
+    }
+
 }

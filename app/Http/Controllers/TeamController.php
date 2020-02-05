@@ -40,4 +40,8 @@ class TeamController extends  AppBaseController
     public function show($id){
         return view('teams.view');
     }
+
+    public function create(){
+        return view('teams.create');
+    }
 }
