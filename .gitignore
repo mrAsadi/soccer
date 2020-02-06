@@ -12,3 +12,5 @@ npm-debug.log
 yarn-error.log
 .idea
 .temp
+!/vendor/laravel/framework/src/Illuminate/Auth/*
+!/vendor/laravel/framework/src/Illuminate/Foundation/Auth/
