@@ -284,6 +284,10 @@ body a {
   text-transform: uppercase;
 }
 
+.help-block {
+  color: red;
+}
+
 .menu-icon {
   display: -webkit-box;
   display: flex;

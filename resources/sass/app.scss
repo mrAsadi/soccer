@@ -50,6 +50,10 @@ body{
     }
 }
 
+.help-block{
+    color: red;
+}
+
 .menu-icon{
     @include flex-col-justify-between;
     height: 1em;

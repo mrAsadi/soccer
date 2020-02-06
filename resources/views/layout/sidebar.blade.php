@@ -16,7 +16,16 @@
                     <a href="/players">players</a>
                 </li>
                 <li>
-                    <a href="/register">teams</a>
+                    <a href="/teams">teams</a>
+                </li>
+
+                <li>
+                    <a href="{!! url('/logout') !!}" class="btn btn-default btn-flat"
+                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout
+                    </a>
+                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
                 </li>
             @endif
         </ul>
