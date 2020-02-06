@@ -84,10 +84,15 @@
                 .fields {
                     @include flex-col-justify-between;
                     align-items: flex-start;
-                    margin-left: 1.5em;
+                    margin-left: 2.5em;
                     height: 6em;
-                }
 
+                    span {
+
+                        margin-left: 0em;
+                    }
+                }
+                width: 30%;
             }
             .body{
                 @include flex-row-between;
@@ -95,10 +100,11 @@
                 .player-info{
                     width: 20%;
                 }
+
                 .bio{
                     margin-top: 0;
-                    width: 80%;
                 }
+                width: 80%;
             }
         }
 
@@ -108,3 +114,25 @@
 
     }
 }
+
+
+@media all and (min-width: 1024px) {
+    .table {
+        .tr{
+            .header{
+                width: 25%;
+            }
+        }
+    }
+}
+
+@media all and (min-width: 1280px) {
+    .table {
+        .tr{
+            .header{
+                width: 15%;
+            }
+        }
+    }
+}
+

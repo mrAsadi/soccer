@@ -20,11 +20,9 @@
                 </div>
                 <div class="body">
 
-                    <div class="player-info">
-                        <div class="col">
-                            <h1>This is title</h1>
-                        </div>
-
+                    <div class="intro">
+                        <h2>Title</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
                     </div>
 
                     <div class="bio">
@@ -51,11 +49,9 @@
                 </div>
                 <div class="body">
 
-                    <div class="player-info">
-                        <div class="col">
-                            <h1>This is title</h1>
-                        </div>
-
+                    <div class="intro">
+                        <h2>Title</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
                     </div>
 
                     <div class="bio">

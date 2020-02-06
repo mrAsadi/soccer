@@ -34,7 +34,6 @@ html{
 body{
 
     background: $blue;
-    height: 100vh;
     background: linear-gradient(#A5C197, #495145);
     color: black;
     font-family: 'Nunito', sans-serif;
@@ -147,7 +146,12 @@ main{
         }
     }
     .content{
-        margin: 8em 2em;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        margin: 12em 2em;
 
         .team-item{
            @include soft-box;
@@ -190,7 +194,7 @@ main{
 
         .team-item:hover{
             box-shadow: 1px 2px 7px #564141;
-            transform: translate3d(1px,1px,1px) scale(1.025);
+            transform: translate3d(1px,1px,1px) scale(1.015);
             transition: all 0.3s ease-in-out;
         }
 
@@ -205,7 +209,7 @@ main{
                 padding: 0.5em 0em;
                 border-bottom: 1px solid #0000005e;
                 text-align: left;
-                margin: 1em;
+                margin: 1em 0;
                 width: 80%;
             }
 
@@ -217,7 +221,10 @@ main{
 
         .team-wrapper{
             @include flex-col-justify-between;
-            height:38em;
+
+            height: 32em;
+            max-width: 50em;
+            font-size: 1.2rem;
             img{
                 width: 8em;
             }
@@ -267,13 +274,16 @@ main{
 
         .player-wrapper{
             @include flex-col-justify-between;
-            height:38em;
+            height: 32em;
+            max-width: 50em;
+            font-size: 1.2rem;
+
             color:white;
             img{
-                max-width: 24em;
+
                 object-fit: cover;
                 object-position: center;
-
+                width: 100%;
             }
 
             h3{
@@ -367,12 +377,11 @@ main{
             textarea{
                 background-attachment: local;
                 background: none;
-                background-image:repeating-linear-gradient(transparent,transparent 31px, #ffffff94 32px, #ffffff94 32px, transparent 32px);
+                background-image:repeating-linear-gradient(transparent, transparent 33px, #ffffff94, #ffffff94, transparent 34px);
                 border: none;
                 outline: none;
                 text-align: left;
                 resize: none;
-                margin: 2em 0;
                 line-height: 3em;
                 height: 12em;
                 width: 100%;
@@ -383,3 +392,82 @@ main{
 }
 
 
+@media all and(min-width: 320px) {
+    html{
+        font-size: 12px;
+    }
+}
+
+@media all and(min-width: 768px) {
+
+    main {
+        .content{
+           @include flex-row-between;
+            width: 95%;
+            form{
+                justify-content: space-around;
+                margin: 0 auto;
+                width: 60%;
+                height: 28em;
+            }
+
+            .player-wrapper{
+                img{
+                    width: 33%;
+                    border-radius: 50%;
+                }
+            }
+
+            .team-item{
+                margin: 1em;
+                padding: 3em 6em;
+            }
+        }
+        .sidebar{
+            top: 0;
+            transform: translateY(-50vw);
+            transition: transform .3s  ease-in;
+            @include flex-row-center;
+            height: 10vh;
+            width: 100%;
+
+            .sidebar-wrapper{
+                ul{
+                    @include flex-row-between;
+                    width: 30em;
+                    height: 0;
+                }
+            }
+        }
+        .show-menu{
+            transform: translateY(0vw);
+            transition: transform .5s  ease-out;
+        }
+    }
+}
+
+@media all and(min-width: 1024px) {
+    main{
+        .content {
+            justify-content: space-around;
+        }
+    }
+
+}
+
+@media all and(min-width: 1280px) {
+
+    main {
+        .content {
+            @include flex-row-around;
+
+            form{
+                justify-content: space-around;
+                margin: 0 auto;
+                width: 40%;
+                height: 36em;
+            }
+
+        }
+    }
+}

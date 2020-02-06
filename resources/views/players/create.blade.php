@@ -9,17 +9,21 @@
                 <img class="img-upload" src="{{asset('img/camera.svg')}}" alt="">
             </div>
 
-            <input type="text" placeholder="name" name="name">
-            <input type="text" placeholder="lastname" name="lastname">
-            <input type="number" placeholder="age" name="age">
-            <input type="number" placeholder="height" name="height">
-            <input type="number" placeholder="wight" name="weight">
+            <div class="input-area">
+                <input type="text" placeholder="name" name="name">
+                <input type="text" placeholder="lastname" name="lastname">
+                <input type="number" placeholder="age" name="age">
+                <input type="number" placeholder="height" name="height">
+                <input type="number" placeholder="wight" name="weight">
+            </div>
 
-            <textarea name="description" cols="30" placeholder="description" rows="10"></textarea>
+            <div class="edit-area">
+                <textarea name="description" cols="30" placeholder="description" rows="10"></textarea>
 
+                <input type="text" placeholder="teams" name="teams">
 
+            </div>
 
-            <input type="text" placeholder="teams" name="teams">
 
             <div class="submit-area">
                 <img src="{{asset('img/submit.svg')}}" alt="">
