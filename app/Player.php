@@ -32,7 +32,7 @@ class Player extends Model
         'height',
         'weight',
         'age',
-        'address'
+        'user_id'
     ];
 
     /**
@@ -48,7 +48,6 @@ class Player extends Model
         'height'=>'string',
         'weight'=>'string',
         'age'=>'integer',
-        'address'=>'string',
     ];
 
     /**

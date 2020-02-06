@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Utility\APIRequest;
 
-class UpdatePlayerAPIRequest extends APIRequest
+class UpdatePlayerRequest extends APIRequest
 {
     /**
      * Determine if the user is authorized to make this request.

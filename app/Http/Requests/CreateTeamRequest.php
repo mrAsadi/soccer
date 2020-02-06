@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Utility\APIRequest;
 
-class UpdateTeamAPIRequest extends APIRequest
+class CreateTeamRequest extends APIRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,9 @@ class UpdateTeamAPIRequest extends APIRequest
     public function rules()
     {
       return
-          [
-            'thumbnail' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048|min:1',
-            'title' => 'required',
-            'description' => 'required'
+          [   'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048|min:1',
+              'title' => 'required',
+              'description' => 'required'
           ];
     }
 }

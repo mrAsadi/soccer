@@ -20,4 +20,5 @@ Auth::routes();
 Route::middleware(['auth'])->group(function() {
     Route::resource('players', 'PlayerController');
     Route::resource('teams', 'TeamController');
+    Route::post('players/store', 'PlayerController@store');
 });

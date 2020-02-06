@@ -1,4 +1,12 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);.table .tr {
+@import url(https://fonts.googleapis.com/css?family=Nunito);.table .success-message {
+  width: 100%;
+  background: #4dc0b5;
+  color: #2b9534;
+  padding: 2em;
+  font-size: 1.3rem;
+}
+
+.table .tr {
   border-radius: 1em;
   background: white;
   box-shadow: 1px 1px 16px #564141;
@@ -79,7 +87,7 @@
           flex-direction: column;
   -webkit-box-pack: justify;
           justify-content: space-between;
-  padding: 1em;
+  padding: 2em;
 }
 
 .table .tr .body .player-info {
@@ -143,7 +151,7 @@
             flex-direction: row-reverse;
     -webkit-box-pack: end;
             justify-content: flex-end;
-    width: 30%;
+    width: 25%;
   }
 
   .table .tr .header .fields {
@@ -175,11 +183,11 @@
     -webkit-box-pack: justify;
             justify-content: space-between;
     padding: 0 1em;
-    width: 80%;
+    width: 75%;
   }
 
   .table .tr .body .player-info {
-    width: 20%;
+    width: 25%;
   }
 
   .table .tr .body .bio {
@@ -193,7 +201,7 @@
 
 @media all and (min-width: 1024px) {
   .table .tr .header {
-    width: 25%;
+    width: 20%;
   }
 }
 
@@ -375,7 +383,7 @@ main .sidebar {
   z-index: 999;
   left: 0;
   height: 100vh;
-  background: #7a7a7aed;
+  background: #656565b5;
   -webkit-transform: translateX(-50vw);
           transform: translateX(-50vw);
   -webkit-transition: -webkit-transform 0.3s ease-in;
@@ -446,7 +454,13 @@ main .content {
           justify-content: center;
   -webkit-box-align: stretch;
           align-items: stretch;
-  margin: 12em 2em;
+  margin: 2em;
+  position: relative;
+  top: 20%;
+}
+
+main .content .new-player {
+  margin-bottom: 1em;
 }
 
 main .content .team-item {
@@ -754,8 +768,8 @@ main .content .player-form .upload-area {
 
 main .content .player-form .upload-area .img-thumbnail {
   border-radius: 50%;
-  width: 16em;
-  height: 16em;
+  width: 8em;
+  height: 8em;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -763,12 +777,16 @@ main .content .player-form .upload-area .img-thumbnail {
 }
 
 main .content .player-form .upload-area .img-upload {
-  width: 3em;
+  width: 2em;
   margin-top: -1em;
 }
 
 main .content .player-form .upload-area:hover {
   opacity: 1;
+}
+
+main .content .player-form .edit-area {
+  width: 100%;
 }
 
 main .content .player-form .submit-area {
@@ -831,9 +849,9 @@ main .content .player-form textarea {
             flex-direction: row;
     -webkit-box-align: center;
             align-items: center;
-    -webkit-box-pack: justify;
-            justify-content: space-between;
-    width: 95%;
+    justify-content: space-around;
+    -webkit-box-pack: start;
+            justify-content: start;
   }
 
   main .content form {

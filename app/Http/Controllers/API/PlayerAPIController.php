@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\API;
 use App\Http\Requests\CreatePlayerAPIRequest;
-use App\Http\Requests\UpdatePlayerAPIRequest;
+use App\Http\Requests\UpdatePlayerRequest;
 use App\Player;
 use App\Repositories\PlayerRepository;
 use Illuminate\Http\Request;
@@ -84,11 +84,11 @@ class PlayerAPIController extends AppBaseController
      * PUT/PATCH /Players/{id}
      *
      * @param int $id
-     * @param UpdatePlayerAPIRequest $request
+     * @param UpdatePlayerRequest $request
      *
      * @return Response
      */
-    public function update($id, UpdatePlayerAPIRequest $request)
+    public function update($id, UpdatePlayerRequest $request)
     {
         $input = $request->all();
 

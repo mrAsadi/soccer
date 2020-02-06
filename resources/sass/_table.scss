@@ -2,6 +2,14 @@
 
 .table {
 
+    .success-message{
+        width: 100%;
+        background: rgb(77, 192, 181);
+        color: rgb(43, 149, 52);
+        padding: 2em;
+        font-size: 1.3rem;
+    }
+
     .tr{
         border-radius: 1em;
         background: white;
@@ -41,7 +49,7 @@
 
         .body {
             @include flex-col-justify-between;
-            padding: 1em;
+            padding: 2em;
 
             .player-info{
                 @include flex-col-justify-between;
@@ -92,19 +100,19 @@
                         margin-left: 0em;
                     }
                 }
-                width: 30%;
+                width: 25%;
             }
             .body{
                 @include flex-row-between;
                 padding: 0 1em;
                 .player-info{
-                    width: 20%;
+                    width: 25%;
                 }
 
                 .bio{
                     margin-top: 0;
                 }
-                width: 80%;
+                width: 75%;
             }
         }
 
@@ -120,7 +128,7 @@
     .table {
         .tr{
             .header{
-                width: 25%;
+                width: 20%;
             }
         }
     }

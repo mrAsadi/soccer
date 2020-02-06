@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\API;
-use App\Http\Requests\CreateTeamAPIRequest;
-use App\Http\Requests\UpdateTeamAPIRequest;
+use App\Http\Requests\CreateTeamRequest;
+use App\Http\Requests\UpdateTeamRequest;
 use App\Team;
 use App\Repositories\TeamRepository;
 use Illuminate\Http\Request;
@@ -46,11 +46,11 @@ class TeamAPIController extends AppBaseController
      * Store a newly created Team in storage.
      * POST /Teams
      *
-     * @param CreateTeamAPIRequest $request
+     * @param CreateTeamRequest $request
      *
      * @return Response
      */
-    public function store(CreateTeamAPIRequest $request)
+    public function store(CreateTeamRequest $request)
     {
         $input = $request->all();
 
@@ -84,11 +84,11 @@ class TeamAPIController extends AppBaseController
      * PUT/PATCH /Teams/{id}
      *
      * @param int $id
-     * @param UpdateTeamAPIRequest $request
+     * @param UpdateTeamRequest $request
      *
      * @return Response
      */
-    public function update($id, UpdateTeamAPIRequest $request)
+    public function update($id, UpdateTeamRequest $request)
     {
         $input = $request->all();
 

@@ -2,7 +2,16 @@
 
 @section('content')
     <div class="content">
+
+
+
+
+
         <div class="table">
+            <p class="success-message">
+                <a class="new-player" href="/players/create">Create New Player</a>
+                <span style="display: block;">{{ Session::get('message') }}</span>
+            </p>
 
             <div class="tr">
                 <div class="header">

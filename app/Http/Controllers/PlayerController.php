@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
-
+use App\Http\Requests\CreatePlayerRequest;
 use App\Repositories\PlayerRepository;
+use App\Utility\Util;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class PlayerController extends AppBaseController
 {
@@ -40,6 +42,24 @@ class PlayerController extends AppBaseController
     public function create()
     {
         return view('players.create');
+    }
+
+    public function store(CreatePlayerRequest $request){
+
+        $input = $request->all();
+        if($request->hasFile('thumbnail'))
+        {
+
+            $input['thumbnail']=Util::uploadImage($request->file('thumbnail'));
+        }
+        $input['user_id'] = Auth::user()->id;
+
+        $this->playerRepository->create($input);
+
+        Session::flash('message', 'Player Created Successfully');
+
+        return redirect(route('players.index'));
+
     }
 
 }
