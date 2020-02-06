@@ -413,6 +413,14 @@ main .show-menu {
   transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
 }
 
+main .logo {
+  position: fixed;
+  right: 1em;
+  top: 1em;
+  width: 4em;
+  z-index: 9999;
+}
+
 main .container {
   width: 100vw;
   height: 100vh;
@@ -421,13 +429,6 @@ main .container {
   background: -webkit-gradient(linear, left top, left bottom, from(#A5C197), to(#495145));
   background: linear-gradient(#A5C197, #495145);
   overflow: scroll;
-}
-
-main .container .logo {
-  position: fixed;
-  right: 1em;
-  top: 1em;
-  width: 4em;
 }
 
 main .content {
@@ -502,7 +503,7 @@ main .content .team-item a {
   background: #212121;
   border-radius: 2em;
   text-transform: lowercase;
-  /* font-weight: bold; */
+  font-size: 1.2rem;
   color: white;
   box-shadow: 1px 2px 6px #1a1a1aa8;
   opacity: 0.8;
@@ -547,6 +548,7 @@ main .content form input {
   border-bottom: 1px solid #0000005e;
   text-align: left;
   margin: 1em 0;
+  font-size: 1.1rem;
   width: 80%;
 }
 
@@ -555,7 +557,7 @@ main .content form button {
   background: #212121;
   border-radius: 2em;
   text-transform: lowercase;
-  /* font-weight: bold; */
+  font-size: 1.2rem;
   color: white;
   box-shadow: 1px 2px 6px #1a1a1aa8;
   opacity: 0.8;

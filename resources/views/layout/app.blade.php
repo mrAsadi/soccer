@@ -28,14 +28,14 @@
           <div class="menu-line menu-line1-off"></div>
       </div>
 
+      <img class="logo" src="{{asset('img/logo.png')}}" alt="logo">
+
       <div class="sidebar">
           @include('layout.sidebar')
       </div>
 
       <div class="container">
           @yield('content')
-
-          <img class="logo" src="{{asset('img/logo.png')}}" alt="logo">
       </div>
 
 
