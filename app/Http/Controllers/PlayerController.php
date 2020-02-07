@@ -1,12 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Helpers\Utility;
 use App\Http\Requests\CreatePlayerRequest;
 use App\Repositories\PlayerRepository;
 use App\Utility\Util;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
 
 class PlayerController extends AppBaseController
@@ -62,6 +64,25 @@ class PlayerController extends AppBaseController
 
         return redirect(route('players.index'));
 
+    }
+
+    public function destroy($id)
+    {
+        $player = $this->playerRepository->findWithoutFail($id);
+
+
+        if (empty($player)) {
+            Session::flash('message', 'Player not found.');
+            return redirect(route('players.index'));
+        }
+
+        if (File::exists(Util::FileFromURL($player->thumbnail))) {
+            File::delete(Util::FileFromURL($player->thumbnail));
+        }
+
+        $this->playerRepository->delete($id);
+        Session::flash('message', 'Player removed successfully.');
+        return redirect(route('players.index'));
     }
 
 }

@@ -20,7 +20,14 @@
 
                     <div class="operations">
                         <a href=""> <img src="{{asset('img/edit.svg')}}" alt=""></a>
-                        <a href=""> <img src="{{asset('img/del.svg')}}" alt=""></a>
+
+{{--                        <form id="delete-form" action="{{ URL::route('players.destroy', 1 )}}" method="POST" style="display: none;">--}}
+                        <form id="delete-form" :action="deletebyid(player.id)" method="POST" style="display: none;">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        </form>
+                        <a href="#" onclick="event.preventDefault(); if(confirm('are you sure?')) document.getElementById('delete-form').submit();"> <img src="{{asset('img/del.svg')}}" alt=""></a>
+
 
                     </div>
                 </div>
@@ -63,6 +70,11 @@
             },
             created:function () {
 
+            },
+            methods:{
+                deletebyid(id){
+                    return 'players/'+id;
+                }
             }
         });
 

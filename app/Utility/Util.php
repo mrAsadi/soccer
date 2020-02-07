@@ -5,6 +5,7 @@ namespace App\Utility;
 
 
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class Util
 {
@@ -22,4 +23,10 @@ class Util
         }
         return '';
     }
+
+    public static function FileFromURL($url){
+        $t=str_replace(asset('storage'),'',$url);
+        return Storage::disk('public')->path(str_replace_first('/','',$t));
+    }
+
 }

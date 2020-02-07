@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 use App\Team;
-use Prettus\Repository\Eloquent\BaseRepository;
+use InfyOm\Generator\Common\BaseRepository;
 
 /**
  * Class characterRepository
