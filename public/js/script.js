@@ -13,19 +13,22 @@ const camimg = document.getElementById('thumbnail-cam');
 const submitter = document.getElementById('submit-form');
 const myform = document.getElementById('player-form');
 
-
+if(submitter)
 submitter.addEventListener('click', () => {
     myform.submit();
 });
 
+if(myimg)
 myimg.addEventListener('click', () => {
     fileinput.click();
 });
 
+if(camimg)
 camimg.addEventListener('click', () => {
     fileinput.click();
 });
 
+if(fileinput)
 fileinput.addEventListener('change', () => {
 
     if (fileinput.files && fileinput.files[0]) {

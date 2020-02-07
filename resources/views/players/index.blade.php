@@ -19,7 +19,7 @@
                     </div>
 
                     <div class="operations">
-                        <a href=""> <img src="{{asset('img/edit.svg')}}" alt=""></a>
+                        <a :href="editbyid(player.id)"> <img src="{{asset('img/edit.svg')}}" alt=""></a>
 
 {{--                        <form id="delete-form" action="{{ URL::route('players.destroy', 1 )}}" method="POST" style="display: none;">--}}
                         <form id="delete-form" :action="deletebyid(player.id)" method="POST" style="display: none;">
@@ -74,6 +74,10 @@
             methods:{
                 deletebyid(id){
                     return 'players/'+id;
+                },
+
+                editbyid(id){
+                    return 'players/'+id+'/edit';
                 }
             }
         });

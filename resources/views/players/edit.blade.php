@@ -2,9 +2,10 @@
 
 @section('content')
     <div class="content">
-        <form id="player-form" class="player-form" method="post" action="{{ url('/players/store') }}" enctype="multipart/form-data">
+        <form id="player-form" class="player-form" method="post" action="{{ URL::route('players.update', $player->id )}}" enctype="multipart/form-data">
 
             {!! csrf_field() !!}
+            <input type="hidden" name="_method" value="patch">
 
             @if ($errors->has('name'))
                 <span class="help-block">
@@ -26,20 +27,20 @@
 
             <div class="upload-area">
                 <input type='file' onchange=""  name="thumbnail" accept="image/*"  id="thumbnail-file" style="display: none;"  />
-                <img id="thumbnail" class="img-thumbnail" src="{{asset('img/profile.svg')}}" alt="">
+                <img id="thumbnail" class="img-thumbnail" src="{{$player->thumbnail}}" alt="">
                 <img id="thumbnail-cam" class="img-upload" src="{{asset('img/camera.svg')}}" alt="">
             </div>
 
             <div class="input-area">
-                <input type="text" placeholder="name" name="name" value="{{ old('name') }}">
-                <input type="text" placeholder="lastname" name="lastname" value="{{ old('lastname') }}">
-                <input type="number" placeholder="age" name="age" value="{{ old('age') }}">
-                <input type="number" placeholder="height" name="height" value="{{ old('height') }}">
-                <input type="number" placeholder="wight" name="weight" value="{{ old('weight') }}">
+                <input type="text" placeholder="name" name="name" value="{{old('name')? old('name') :$player->name}}">
+                <input type="text" placeholder="lastname" name="lastname" value="{{old('lastname')? old('lastname'): $player->lastname }}">
+                <input type="number" placeholder="age" name="age" value="{{ old('age') ? old('age')  : $player->age }}">
+                <input type="number" placeholder="height" name="height" value="{{old('height')? old('height') : $player->height }}">
+                <input type="number" placeholder="wight" name="weight" value="{{ old('weight')? old('weight') : $player->weight }}">
             </div>
 
             <div class="edit-area">
-                <textarea name="description" cols="30" placeholder="description" rows="10">{{ old('description') }}</textarea>
+                <textarea name="description" cols="30" placeholder="description" rows="10" >{{ old('description')? old('description') : $player->description}}</textarea>
                 <input type="text" placeholder="teams" name="teams" value="{{ old('teams') }}">
             </div>
 
