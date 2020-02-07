@@ -1,4 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);.table .success-message {
+@import url(https://fonts.googleapis.com/css?family=Nunito);.table {
+  width: 100%;
+}
+
+.table .success-message {
   width: 100%;
   background: #4dc0b5;
   color: #2b9534;
@@ -18,6 +22,8 @@
           flex-direction: column;
   -webkit-box-pack: justify;
           justify-content: space-between;
+  -webkit-box-pack: start;
+          justify-content: flex-start;
 }
 
 .table .tr .header {
@@ -33,7 +39,7 @@
   background: #81c6c0d9;
   border-top-left-radius: 1em;
   border-top-right-radius: 1em;
-  padding: 1em;
+  padding: 1em 2em;
 }
 
 .table .tr .header .operations {
@@ -87,7 +93,6 @@
           flex-direction: column;
   -webkit-box-pack: justify;
           justify-content: space-between;
-  padding: 2em;
 }
 
 .table .tr .body .player-info {
@@ -98,6 +103,7 @@
           flex-direction: column;
   -webkit-box-pack: justify;
           justify-content: space-between;
+  margin: 0 2em;
 }
 
 .table .tr .body .col {
@@ -121,7 +127,7 @@
 }
 
 .table .tr .body .bio {
-  margin-top: 0.5em;
+  margin: 0 2em;
 }
 
 @media all and (min-width: 768px) {
@@ -130,9 +136,6 @@
   }
 
   .table .tr {
-    border-radius: 0;
-    margin: 0;
-    box-shadow: none;
     display: -webkit-box;
     display: flex;
     -webkit-box-orient: horizontal;
@@ -140,8 +143,13 @@
             flex-direction: row;
     -webkit-box-align: center;
             align-items: center;
-    -webkit-box-pack: justify;
-            justify-content: space-between;
+    -webkit-box-pack: center;
+            justify-content: center;
+    -webkit-box-pack: start;
+            justify-content: flex-start;
+    border-radius: 0;
+    margin: 0;
+    box-shadow: none;
   }
 
   .table .tr .header {
@@ -151,7 +159,6 @@
             flex-direction: row-reverse;
     -webkit-box-pack: end;
             justify-content: flex-end;
-    width: 25%;
   }
 
   .table .tr .header .fields {
@@ -183,11 +190,6 @@
     -webkit-box-pack: justify;
             justify-content: space-between;
     padding: 0 1em;
-    width: 75%;
-  }
-
-  .table .tr .body .player-info {
-    width: 25%;
   }
 
   .table .tr .body .bio {
@@ -199,16 +201,8 @@
   }
 }
 
-@media all and (min-width: 1024px) {
-  .table .tr .header {
-    width: 20%;
-  }
-}
-
-@media all and (min-width: 1280px) {
-  .table .tr .header {
-    width: 15%;
-  }
+[v-cloak] {
+  display: none !important;
 }
 
 *,
@@ -383,7 +377,7 @@ main .sidebar {
   z-index: 999;
   left: 0;
   height: 100vh;
-  background: #656565b5;
+  background: rgba(15, 108, 123, 0.9);
   -webkit-transform: translateX(-50vw);
           transform: translateX(-50vw);
   -webkit-transition: -webkit-transform 0.3s ease-in;
@@ -409,11 +403,12 @@ main .sidebar .sidebar-wrapper ul {
           flex-direction: column;
   -webkit-box-pack: justify;
           justify-content: space-between;
-  height: 10em;
+  height: 14em;
 }
 
 main .sidebar .sidebar-wrapper ul li a {
   font-size: 1.5rem;
+  color: white;
 }
 
 main .show-menu {
@@ -456,7 +451,7 @@ main .content {
           align-items: stretch;
   margin: 2em;
   position: relative;
-  top: 20%;
+  top: 10%;
 }
 
 main .content .new-player {
@@ -858,7 +853,7 @@ main .content .player-form textarea {
     justify-content: space-around;
     margin: 0 auto;
     width: 60%;
-    height: 28em;
+    height: 50em;
   }
 
   main .content .player-wrapper img {
@@ -938,7 +933,6 @@ main .content .player-form textarea {
     justify-content: space-around;
     margin: 0 auto;
     width: 40%;
-    height: 36em;
   }
 }
 

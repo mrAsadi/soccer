@@ -1,7 +1,7 @@
 @import "mixin";
 
 .table {
-
+    width: 100%;
     .success-message{
         width: 100%;
         background: rgb(77, 192, 181);
@@ -16,13 +16,14 @@
         box-shadow: 1px 1px 16px #564141;
         margin:4em 0;
         @include flex-col-justify-between;
+        justify-content: flex-start;
 
         .header {
             @include flex-row-between;
             background: #81c6c0d9;
             border-top-left-radius: 1em;
             border-top-right-radius: 1em;
-            padding: 1em;
+            padding: 1em 2em;
 
             .operations {
                 @include flex-col-justify-between;
@@ -49,10 +50,11 @@
 
         .body {
             @include flex-col-justify-between;
-            padding: 2em;
+
 
             .player-info{
                 @include flex-col-justify-between;
+                margin:0 2em;
             }
 
             .col {
@@ -67,7 +69,7 @@
             }
 
             .bio {
-                margin-top: .5em;
+                margin:0 2em;
             }
         }
     }
@@ -78,11 +80,13 @@
     .table {
         box-shadow: 1px 1px 16px #564141;
         .tr{
+            @include flex-row-center;
+            justify-content: flex-start;
+
             border-radius: 0;
             margin: 0;
             box-shadow:none;
 
-            @include flex-row-between;
             .header{
 
                 border-radius: 0;
@@ -100,19 +104,19 @@
                         margin-left: 0em;
                     }
                 }
-                width: 25%;
+
             }
             .body{
                 @include flex-row-between;
                 padding: 0 1em;
                 .player-info{
-                    width: 25%;
+
                 }
 
                 .bio{
                     margin-top: 0;
                 }
-                width: 75%;
+
             }
         }
 
@@ -128,7 +132,7 @@
     .table {
         .tr{
             .header{
-                width: 20%;
+
             }
         }
     }
@@ -138,7 +142,7 @@
     .table {
         .tr{
             .header{
-                width: 15%;
+
             }
         }
     }

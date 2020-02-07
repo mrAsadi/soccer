@@ -23,7 +23,7 @@
 
 
   <main id="app">
-      <div class="menu-icon" onclick="toggle_menu(this)">
+      <div class="menu-icon" onclick="toggle_me(this)">
           <div class="menu-line menu-line2-off"></div>
           <div class="menu-line menu-line1-off"></div>
       </div>
@@ -46,20 +46,7 @@
   <script src="{{asset('js/app.js')}}"></script>
   <script src="{{asset('js/script.js')}}"></script>
 
-  <script>
-
-      function toggle_menu(e) {
-          const sidebar = document.querySelector('.sidebar');
-          e.lastChild.classList.toggle('menu-line1');
-          e.firstChild.classList.toggle('menu-line2');
-          e.lastChild.classList.toggle('menu-line1-off');
-          e.firstChild.classList.toggle('menu-line2-off');
-          sidebar.classList.toggle('show-menu');
-      }
-
-  </script>
-
-  @yield('script')
+  @yield('scripts')
 
 </body>
 

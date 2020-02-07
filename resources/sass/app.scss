@@ -6,6 +6,9 @@
 @import 'table';
 @import "mixin";
 
+[v-cloak] {
+    display: none !important;
+}
 
 *,*::after,*::before{
     margin: 0;
@@ -109,7 +112,7 @@ main{
         z-index: 999;
         left: 0;
         height: 100vh;
-        background: #656565b5;
+        background: rgba(15, 108, 123, 0.9);
         transform: translateX(-50vw);
         transition: transform .3s  ease-in;
         @include flex-col-center;
@@ -118,11 +121,12 @@ main{
 
             ul{
                 @include flex-col-justify-between;
-                height: 10em;
+                height: 14em;
 
                 li{
                     a{
                         font-size: 1.5rem;
+                        color: white;
                     }
                 }
             }
@@ -160,7 +164,7 @@ main{
         align-items: stretch;
         margin: 2em;
         position: relative;
-        top:20%;
+        top:10%;
 
         .new-player{
             margin-bottom: 1em;
@@ -425,7 +429,7 @@ main{
                 justify-content: space-around;
                 margin: 0 auto;
                 width: 60%;
-                height: 28em;
+                height: 50em;
             }
 
             .player-wrapper{
@@ -482,7 +486,6 @@ main{
                 justify-content: space-around;
                 margin: 0 auto;
                 width: 40%;
-                height: 36em;
             }
 
         }

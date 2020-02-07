@@ -8,6 +8,7 @@ use App\Repositories\PlayerRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Response;
+use JWTAuth;
 
 /**
  * Class PlayerController
@@ -126,5 +127,9 @@ class PlayerAPIController extends AppBaseController
         $Player->delete();
 
         return $this->sendResponse($id, 'Player deleted successfully');
+    }
+
+    public function getPlayers(){
+
     }
 }

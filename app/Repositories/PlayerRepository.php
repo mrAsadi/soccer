@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Player;
+use Prettus\Repository\Eloquent\BaseRepository;
 
 /**
  * Class characterRepository

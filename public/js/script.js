@@ -1,11 +1,8 @@
-function readURL(input,img) {
-
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            img.attr('src', e.target.result);
-        }
-        reader.readAsDataURL(input.files[0]);
-    }
+function toggle_me(e) {
+    const sidebar = document.querySelector('.sidebar');
+    e.lastElementChild.classList.toggle('menu-line1');
+    e.firstElementChild.classList.toggle('menu-line2');
+    e.lastElementChild.classList.toggle('menu-line1-off');
+    e.firstElementChild.classList.toggle('menu-line2-off');
+    sidebar.classList.toggle('show-menu');
 }

@@ -29,7 +29,9 @@ class PlayerController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $players = $this->playerRepository->all();
+        $players = $this->playerRepository->orderBy('created_at','desc')->all();
+        $players = json_encode($players);
+
 
         return view('players.index')
             ->with('players', $players);
