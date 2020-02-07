@@ -24,8 +24,10 @@ class CreateTeamRequest extends APIRequest
     public function rules()
     {
       return
-          [   'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048|min:1',
+          [
+              'name' => 'required',
               'title' => 'required',
+              'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048|min:1',
               'description' => 'required'
           ];
     }

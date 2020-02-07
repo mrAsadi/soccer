@@ -24,6 +24,7 @@ class Team extends Model
         'name',
         'title',
         'description',
+        'user_id'
     ];
 
     /**

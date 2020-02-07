@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="content">
-        <form id="player-form" class="player-form" method="post" action="{{ url('/players/store') }}" enctype="multipart/form-data">
+        <form id="player-form" class="player-form" method="post" action="{{ URL::route('players.store') }}" enctype="multipart/form-data">
 
             {!! csrf_field() !!}
 
@@ -46,7 +46,6 @@
 
             <div class="submit-area">
                 <img id="submit-form" src="{{asset('img/submit.svg')}}" alt="">
-                <img src="{{asset('img/delete.svg')}}" alt="">
             </div>
 
 

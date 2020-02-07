@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Helpers\Utility;
 use App\Http\Requests\CreatePlayerRequest;
 use App\Http\Requests\UpdatePlayerRequest;
 use App\Repositories\PlayerRepository;
@@ -41,7 +40,12 @@ class PlayerController extends AppBaseController
     }
 
     public function show($id){
-        return view('players.view');
+        $player = $this->playerRepository->findWithoutFail($id);
+        if (empty($player)) {
+            return redirect('/');
+        }
+
+        return view('players.view')->with('player',$player);
     }
 
     public function edit($id){

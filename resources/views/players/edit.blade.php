@@ -47,7 +47,6 @@
 
             <div class="submit-area">
                 <img id="submit-form" src="{{asset('img/submit.svg')}}" alt="">
-                <img src="{{asset('img/delete.svg')}}" alt="">
             </div>
 
 

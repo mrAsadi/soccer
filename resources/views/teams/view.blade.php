@@ -3,12 +3,10 @@
 @section('content')
     <div class="content">
         <div class="team-wrapper">
-            <img src="{{asset('img/team1.png')}}" alt="">
-            <h1>Barcelona</h1>
-            <h2>It's turn on us now...</h2>
-            <p>
-                lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.lorem ipsum is placeholder .lorem ipsum is.
-            </p>
+            <img src="{{ $team->thumbnail }}" alt="">
+            <h1>{{$team->name}}</h1>
+            <h2>{{$team->title}}</h2>
+            <p>{{$team->description}}</p>
 
             <h3>Players</h3>
             <div class="players-section">

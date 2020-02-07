@@ -126,6 +126,10 @@
   text-transform: capitalize;
 }
 
+.table .tr .body .intro {
+  margin: 2em;
+}
+
 .table .tr .body .bio {
   margin: 2em;
 }
@@ -190,10 +194,6 @@
     -webkit-box-pack: justify;
             justify-content: space-between;
     padding: 0 1em;
-  }
-
-  .table .tr .body .bio {
-    margin-top: 0;
   }
 
   .table .tr:nth-child(even) {
@@ -794,7 +794,6 @@ main .content .player-form .submit-area {
           align-items: center;
   -webkit-box-pack: justify;
           justify-content: space-between;
-  width: 50%;
   margin-top: 2em;
 }
 
