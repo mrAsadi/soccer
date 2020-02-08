@@ -245,6 +245,8 @@ main{
             height: 32em;
             max-width: 50em;
             font-size: 1.2rem;
+            width: 100%;
+
             img{
                 width: 8em;
             }
@@ -262,6 +264,7 @@ main{
             }
             .players-section{
                 @include flex-row-between;
+                justify-content: flex-start;
                 flex-wrap: wrap;
                 margin-top: 1em;
 
@@ -297,6 +300,7 @@ main{
             height: 32em;
             max-width: 50em;
             font-size: 1.2rem;
+            width: 100%;
 
             color:white;
             img{
@@ -318,6 +322,7 @@ main{
             }
             .teams-section{
                 @include flex-row-between;
+                justify-content: flex-start;
                 flex-wrap: wrap;
 
                 .teams-section-item{

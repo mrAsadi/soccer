@@ -656,6 +656,7 @@ main .content .team-wrapper {
   height: 32em;
   max-width: 50em;
   font-size: 1.2rem;
+  width: 100%;
 }
 
 main .content .team-wrapper img {
@@ -687,6 +688,8 @@ main .content .team-wrapper .players-section {
           align-items: center;
   -webkit-box-pack: justify;
           justify-content: space-between;
+  -webkit-box-pack: start;
+          justify-content: flex-start;
   flex-wrap: wrap;
   margin-top: 1em;
 }
@@ -739,6 +742,7 @@ main .content .player-wrapper {
   height: 32em;
   max-width: 50em;
   font-size: 1.2rem;
+  width: 100%;
   color: white;
 }
 
@@ -772,6 +776,8 @@ main .content .player-wrapper .teams-section {
           align-items: center;
   -webkit-box-pack: justify;
           justify-content: space-between;
+  -webkit-box-pack: start;
+          justify-content: flex-start;
   flex-wrap: wrap;
 }
 
