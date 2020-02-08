@@ -19,6 +19,24 @@
                 </span>
             @endif
 
+            @if ($errors->has('age'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('age') }}</strong>
+                </span>
+            @endif
+
+            @if ($errors->has('height'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('height') }}</strong>
+                </span>
+            @endif
+
+            @if ($errors->has('weight'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('weight') }}</strong>
+                </span>
+            @endif
+
             @if ($errors->has('thumbnail'))
                 <span class="help-block">
                     <strong>{{ $errors->first('thumbnail') }}</strong>

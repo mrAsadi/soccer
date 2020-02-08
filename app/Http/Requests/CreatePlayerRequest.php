@@ -27,7 +27,10 @@ class CreatePlayerRequest extends APIRequest
             'teams' => 'array',
             'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048|min:1',
             'name' => 'required',
-            'lastname' => 'required'
+            'lastname' => 'required',
+            'height' => 'numeric|between:1.0,3.0',
+            'age' => 'numeric|min:1|max:120',
+            'weight' => 'numeric|between:10,300',
         ];
     }
 }
