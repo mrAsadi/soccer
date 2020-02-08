@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 use App\Http\Requests\CreatePlayerRequest;
 use App\Http\Requests\UpdatePlayerRequest;
+use App\Player;
 use App\Repositories\PlayerRepository;
+use App\Repositories\TeamRepository;
+use App\Team;
 use App\Utility\Util;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -15,10 +18,12 @@ class PlayerController extends AppBaseController
 {
     /** @var  PlayerRepository */
     private $playerRepository;
+    private $teamRepository;
 
-    public function __construct(PlayerRepository $playerRepo)
+    public function __construct(PlayerRepository $playerRepo,TeamRepository $teamRepo)
     {
         $this->playerRepository = $playerRepo;
+        $this->teamRepository = $teamRepo;
     }
 
 
@@ -56,12 +61,23 @@ class PlayerController extends AppBaseController
             return redirect(route('players.index'));
         }
 
-        return view('players.edit')->with('player', $player);
+        $teams = $this->teamRepository->orderBy('created_at','desc')->all();
+
+        foreach ($teams as $team){
+            if ($player->teams()->where('team_id',$team->id)->first()){
+                $team['selected']=true;
+            }else{
+                $team['selected']=false;
+            }
+        }
+
+        return view('players.edit',compact('player','teams'));
     }
 
     public function create()
     {
-        return view('players.create');
+        $teams = $this->teamRepository->orderBy('created_at','desc')->all();
+        return view('players.create')->with('teams',$teams);
     }
 
     public function update($id,UpdatePlayerRequest $request){
@@ -82,7 +98,13 @@ class PlayerController extends AppBaseController
             $input['thumbnail']=Util::uploadImage($request->file('thumbnail'));
         }
         $input['user_id'] = Auth::user()->id;
-        $this->playerRepository->update($input,$id);
+        $player = $this->playerRepository->update($input,$id);
+
+        $player->teams()->detach();
+
+        foreach (json_decode($input['teams']) as $item){
+            $player->teams()->save($this->teamRepository->find($item),['user_id'=>auth()->user()->id]);
+        }
 
         Session::flash('message', 'Player Updated Successfully');
 
@@ -92,6 +114,7 @@ class PlayerController extends AppBaseController
 
     public function store(CreatePlayerRequest $request){
 
+
         $input = $request->all();
         if($request->hasFile('thumbnail'))
         {
@@ -100,7 +123,12 @@ class PlayerController extends AppBaseController
         }
         $input['user_id'] = Auth::user()->id;
 
-        $this->playerRepository->create($input);
+        $player =  $this->playerRepository->create($input);
+
+        foreach (json_decode($input['teams']) as $item){
+            $player->teams()->save($this->teamRepository->find($item),['user_id'=>auth()->user()->id]);
+        }
+
 
         Session::flash('message', 'Player Created Successfully');
 
@@ -122,6 +150,8 @@ class PlayerController extends AppBaseController
         if (File::exists(Util::FileFromURL($player->thumbnail))) {
             File::delete(Util::FileFromURL($player->thumbnail));
         }
+
+        $player->teams()->detach();
 
         $this->playerRepository->delete($id);
         Session::flash('message', 'Player removed successfully.');

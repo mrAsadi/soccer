@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateTeamRequest;
 use App\Http\Requests\UpdatePlayerRequest;
 use App\Http\Requests\UpdateTeamRequest;
+use App\Repositories\PlayerRepository;
 use App\Repositories\TeamRepository;
 use App\Utility\Util;
 use Illuminate\Http\Request;
@@ -18,10 +19,13 @@ class TeamController extends  AppBaseController
 {
 
     /** @var  TeamRepository */
+    private $playerRepository;
     private $teamRepository;
 
-    public function __construct(TeamRepository $teamRepo)
+
+    public function __construct(PlayerRepository $playerRepo,TeamRepository $teamRepo)
     {
+        $this->playerRepository = $playerRepo;
         $this->teamRepository = $teamRepo;
     }
 
@@ -70,7 +74,9 @@ class TeamController extends  AppBaseController
     }
 
     public function create(){
-        return view('teams.create');
+
+        $players = $this->playerRepository->orderBy('created_at','desc')->all();
+        return view('teams.create')->with('players',$players);
     }
 
     public function edit($id){

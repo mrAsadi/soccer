@@ -201,6 +201,70 @@
   }
 }
 
+.selected-team {
+  border: 1px solid #68d13b;
+  opacity: 1;
+}
+
+.multi-select {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-pack: start;
+          justify-content: flex-start;
+  height: 18em;
+  overflow: scroll;
+  width: 100%;
+  border: 1px solid #ffffff7a;
+  border-radius: 2em;
+}
+
+.multi-select .team-select-items {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.multi-select .team-select-item {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  margin: 1em;
+  background: #9393938f;
+  border-radius: 2em;
+  opacity: 0.9;
+  cursor: pointer;
+  padding: 1em;
+  position: relative;
+}
+
+.multi-select .team-select-item .team-image {
+  width: 5em;
+}
+
+.multi-select .team-select-item .ignore {
+  width: 1.5em;
+  position: absolute;
+  top: -2px;
+  right: -2px;
+}
+
+.multi-select .team-select-search {
+  width: 90%;
+}
+
 [v-cloak] {
   display: none !important;
 }
@@ -552,6 +616,7 @@ main .content form {
   background: white;
   box-shadow: 0px 0px 0px #564141;
   box-shadow: 1px 2px 7px #564141;
+  width: 100%;
 }
 
 main .content form input {
@@ -852,7 +917,6 @@ main .content .player-form textarea {
     justify-content: space-around;
     margin: 0 auto;
     width: 60%;
-    height: 50em;
   }
 
   main .content .player-wrapper img {

@@ -37,17 +37,17 @@
                 <input type="number" placeholder="height" name="height" value="{{ old('height') }}">
                 <input type="number" placeholder="wight" name="weight" value="{{ old('weight') }}">
             </div>
+            <input id="items" type="hidden" name="teams" >
 
             <div class="edit-area">
                 <textarea name="description" cols="30" placeholder="description" rows="10">{{ old('description') }}</textarea>
-                <input type="text" placeholder="teams" name="teams" value="{{ old('teams') }}">
             </div>
 
+            @component('Components.selector',['items'=>$teams])@endcomponent
 
             <div class="submit-area">
                 <img id="submit-form" src="{{asset('img/submit.svg')}}" alt="">
             </div>
-
 
         </form>
     </div>

@@ -24,9 +24,10 @@ class UpdatePlayerRequest extends APIRequest
     public function rules()
     {
         return [
-          'thumbnail' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048|min:1',
-          'name' => 'required',
-          'lastname' => 'required'
+            'items'=>'array',
+            'thumbnail' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048|min:1',
+            'name' => 'required',
+            'lastname' => 'required'
         ];
     }
 }

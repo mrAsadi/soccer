@@ -1,0 +1,48 @@
+@import "mixin";
+.selected-team{
+    border: 1px solid #68d13b;
+    opacity: 1;
+}
+
+.multi-select{
+    @include flex-col-center;
+    justify-content: flex-start;
+    height: 18em;
+    overflow: scroll;
+    width: 100%;
+    border: 1px solid #ffffff7a;
+    border-radius: 2em;
+
+    .team-select-items{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .team-select-item{
+        @include flex-col-center;
+        margin: 1em;
+        background: #9393938f;
+        border-radius: 2em;
+        opacity: .9;
+        cursor: pointer;
+        padding: 1em;
+        position: relative;
+
+        .team-image{
+            width: 5em;
+        }
+
+        .ignore{
+            width: 1.5em;
+            position: absolute;
+            top: -2px;
+            right: -2px;
+        }
+
+    }
+
+    .team-select-search{
+        width: 90%;
+    }
+
+}

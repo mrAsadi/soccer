@@ -11,7 +11,10 @@
 |
 */
 
-Route::get('/', 'TeamController@all');
+Route::middleware(['h2'])->group(function() {
+    Route::get('/', 'TeamController@all');
+});
+
 
 Auth::routes();
 

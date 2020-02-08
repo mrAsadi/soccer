@@ -41,9 +41,10 @@
 
             <div class="edit-area">
                 <textarea name="description" cols="30" placeholder="description" rows="10" >{{ old('description')? old('description') : $player->description}}</textarea>
-                <input type="text" placeholder="teams" name="teams" value="{{ old('teams') }}">
             </div>
 
+            <input id="items" type="hidden" name="teams" >
+            @component('Components.selector',['items'=>$teams])@endcomponent
 
             <div class="submit-area">
                 <img id="submit-form" src="{{asset('img/submit.svg')}}" alt="">

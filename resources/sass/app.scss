@@ -5,6 +5,7 @@
 @import 'variables';
 @import 'table';
 @import "mixin";
+@import "multipleselect";
 
 [v-cloak] {
     display: none !important;
@@ -219,6 +220,7 @@ main{
             @include flex-col-center;
             @include soft-box;
             box-shadow: 1px 2px 7px #564141;
+            width: 100%;
 
             input{
                 border: none;
@@ -428,7 +430,6 @@ main{
                 justify-content: space-around;
                 margin: 0 auto;
                 width: 60%;
-                height: 50em;
             }
 
             .player-wrapper{

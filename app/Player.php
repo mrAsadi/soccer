@@ -55,7 +55,7 @@ class Player extends Model
      */
     public function teams(){
         return $this->belongsToMany('App\Team','team_members','player_id','team_id')
-            ->withPivot(['creator'])
+            ->withPivot(['user_id'])
             ->withTimestamps();
     }
 

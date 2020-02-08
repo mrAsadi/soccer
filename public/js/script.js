@@ -15,6 +15,11 @@ const myform = document.getElementById('player-form');
 
 if(submitter)
 submitter.addEventListener('click', () => {
+    var ids = [];
+    document.querySelectorAll('.selected-team').forEach(($item)=>{
+        ids.push($item.getElementsByTagName('input')[0].value);
+    });
+    document.getElementById('items').value = JSON.stringify(ids);
     myform.submit();
 });
 

@@ -43,8 +43,8 @@ class Team extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function members(){
-        return $this->hasMany('App\Player','team_members','team_id','player_id')
-            ->withPivot(['creator'])
+        return $this->belongsToMany('App\Player','team_members','team_id','player_id')
+            ->withPivot(['user_id'])
             ->withTimestamps();
     }
 
