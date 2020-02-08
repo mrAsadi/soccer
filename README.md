@@ -29,9 +29,9 @@ please pull this folder from git repository after installing all composer packag
 
 Search not implemented for assigning players/teams(only ui element added).
 
-Minimum validation rules considered.
+Minimum validation rules are considered.
 
-Run following command for linking after running composer update 
+Run following command for linking storage after running composer update 
 ```
 php artisan storage:link
 ```
