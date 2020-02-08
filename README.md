@@ -20,13 +20,21 @@ all CRUD functionality implemented without any third party package.
 Only repository design pattern base supported by infyom laravel generator.
 
 # Hints
-Auth folder in this path 'vendor/laravel/framework/src/Illuminate/Foundation/Auth' not ignored for some reasons,
+Auth folder in this path 
+````
+vendor/laravel/framework/src/Illuminate/Foundation/Auth
+````
+not ignored for some reasons,
 please pull this folder from git repository after installing all composer packages.
 
 Search not implemented for assigning players/teams(only ui element added).
 
-Minimum validation rules implemented
+Minimum validation rules considered.
 
+Run following command for linking after running composer update 
+```
+php artisan storage:link
+```
 
 # Designed for test project
 Mohammadreza Asadi
