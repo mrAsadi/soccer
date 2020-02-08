@@ -9,10 +9,8 @@
             <h1>@{{ team.name }}</h1>
             <ul>
 
-                <li style="background: url({{asset('img/u1.jpg')}}) no-repeat center/cover"></li>
-                <li style="background: url({{asset('img/u1.jpg')}}) no-repeat center/cover"></li>
-                <li style="background: url({{asset('img/u1.jpg')}}) no-repeat center/cover"></li>
-                <li style="background: url({{asset('img/u1.jpg')}}) no-repeat center/cover"></li>
+                <li v-for="member in team.members" :style="changeStyle(member.thumbnail)"></li>
+
 
             </ul>
             <a :href="linkbyid(team.id)">more</a>
@@ -39,6 +37,9 @@
 
                 editbyid(id){
                     return 'teams/'+id+'/edit';
+                },
+                changeStyle(image){
+                  return 'background: url('+image+') no-repeat center/cover';
                 }
             }
         });

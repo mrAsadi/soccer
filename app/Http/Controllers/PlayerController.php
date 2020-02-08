@@ -77,6 +77,9 @@ class PlayerController extends AppBaseController
     public function create()
     {
         $teams = $this->teamRepository->orderBy('created_at','desc')->all();
+        foreach ($teams as $team){
+            $team['selected']=false;
+        }
         return view('players.create')->with('teams',$teams);
     }
 

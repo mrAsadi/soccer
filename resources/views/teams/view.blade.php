@@ -11,35 +11,12 @@
             <h3>Players</h3>
             <div class="players-section">
 
-                <div class="player-item">
-                    <div class="player-detail-image" style="background: url({{asset('img/u1.jpg')}}) no-repeat center/cover"></div>
-                    <span>Juan Alba</span>
-                </div>
-
-                <div class="player-item">
-                    <div class="player-detail-image" style="background: url({{asset('img/u1.jpg')}}) no-repeat center/cover"></div>
-                    <span>Juan Alba</span>
-                </div>
-
-                <div class="player-item">
-                    <div class="player-detail-image" style="background: url({{asset('img/u1.jpg')}}) no-repeat center/cover"></div>
-                    <span>Juan Alba</span>
-                </div>
-
-                <div class="player-item">
-                    <div class="player-detail-image" style="background: url({{asset('img/u1.jpg')}}) no-repeat center/cover"></div>
-                    <span>Juan Alba</span>
-                </div>
-
-                <div class="player-item">
-                    <div class="player-detail-image" style="background: url({{asset('img/u1.jpg')}}) no-repeat center/cover"></div>
-                    <span>Juan Alba</span>
-                </div>
-
-                <div class="player-item">
-                    <div class="player-detail-image" style="background: url({{asset('img/u1.jpg')}}) no-repeat center/cover"></div>
-                    <span>Juan Alba</span>
-                </div>
+                @foreach($team->members as $member)
+                    <div class="player-item">
+                        <div class="player-detail-image" style="background: url({{$member->thumbnail}}) no-repeat center/cover"></div>
+                        <span><a href="{{URL::route('players.show',$member->id)}}">{{$member->name}}</a></span>
+                    </div>
+                @endforeach
 
             </div>
         </div>

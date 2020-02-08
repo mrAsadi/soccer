@@ -36,13 +36,13 @@
             <textarea name="description" cols="30" placeholder="description" rows="10">{{ old('description') }}</textarea>
 
             <input id="items" type="hidden" name="players" >
+            @component('Components.selector',['items'=>$players])@endcomponent
 
             <div class="submit-area">
                 <img id="submit-form" src="{{asset('img/submit.svg')}}" alt="">
             </div>
 
 
-            @component('Components.selector',['items'=>$players])@endcomponent
 
 
         </form>

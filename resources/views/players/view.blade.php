@@ -15,20 +15,15 @@
             <h3>Teams</h3>
             <div class="teams-section">
 
-                <div class="teams-section-item">
-                    <div class="player-detail-image" style="background: url({{asset('img/team1.png')}}) no-repeat center/cover"></div>
-                    <span>Barcelona</span>
-                </div>
+                @foreach($player->teams as $team)
 
-                <div class="teams-section-item">
-                    <div class="player-detail-image" style="background: url({{asset('img/team1.png')}}) no-repeat center/cover"></div>
-                    <span>Barcelona</span>
-                </div>
+                    <div class="teams-section-item">
+                        <div class="player-detail-image" style="background: url({{$team->thumbnail}}) no-repeat center/cover"></div>
+                        <span><a href="{{URL::route('teams.show',$team->id)}}">{{$team->name}}</a></span>
 
-                <div class="teams-section-item">
-                    <div class="player-detail-image" style="background: url({{asset('img/team1.png')}}) no-repeat center/cover"></div>
-                    <span>Barcelona</span>
-                </div>
+                    </div>
+
+                @endforeach
 
 
             </div>

@@ -24,9 +24,10 @@ class CreatePlayerRequest extends APIRequest
     public function rules()
     {
         return [
-          'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048|min:1',
-          'name' => 'required',
-          'lastname' => 'required'
+            'teams' => 'array',
+            'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048|min:1',
+            'name' => 'required',
+            'lastname' => 'required'
         ];
     }
 }

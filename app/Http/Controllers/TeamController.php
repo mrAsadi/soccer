@@ -56,7 +56,11 @@ class TeamController extends  AppBaseController
         }
         $input['user_id'] = Auth::user()->id;
 
-        $this->teamRepository->create($input);
+        $team = $this->teamRepository->create($input);
+
+        foreach (json_decode($input['players']) as $item){
+            $team->members()->save($this->playerRepository->find($item),['user_id'=>auth()->user()->id]);
+        }
 
         Session::flash('message', 'Team Created Successfully');
 
@@ -76,6 +80,9 @@ class TeamController extends  AppBaseController
     public function create(){
 
         $players = $this->playerRepository->orderBy('created_at','desc')->all();
+        foreach ($players as $player){
+            $player['selected']=false;
+        }
         return view('teams.create')->with('players',$players);
     }
 
@@ -87,7 +94,18 @@ class TeamController extends  AppBaseController
             return redirect(route('teams.index'));
         }
 
-        return view('teams.edit')->with('team', $team);
+        $players = $this->playerRepository->orderBy('created_at','desc')->all();
+
+        foreach ($players as $player){
+            if ($team->members()->where('player_id',$player->id)->first()){
+                $player['selected']=true;
+            }else{
+                $player['selected']=false;
+            }
+        }
+
+        return view('teams.edit',compact('team','players'));
+
     }
 
     public function update($id,UpdateTeamRequest $request){
@@ -107,8 +125,17 @@ class TeamController extends  AppBaseController
             }
             $input['thumbnail']=Util::uploadImage($request->file('thumbnail'));
         }
+        $team->members()->detach();
+
+        foreach (json_decode($input['players']) as $item){
+            $team->members()->save($this->playerRepository->find($item),['user_id'=>auth()->user()->id]);
+        }
+
+
         $input['user_id'] = Auth::user()->id;
         $this->teamRepository->update($input,$id);
+
+
 
         Session::flash('message', 'Team Updated Successfully');
 
@@ -130,6 +157,8 @@ class TeamController extends  AppBaseController
             File::delete(Util::FileFromURL($team->thumbnail));
         }
 
+        $team->members()->detach();
+
         $this->teamRepository->delete($id);
         Session::flash('message', 'Team removed successfully.');
         return redirect(route('teams.index'));
@@ -137,6 +166,11 @@ class TeamController extends  AppBaseController
 
     public function all(){
         $teams = $this->teamRepository->orderBy('created_at','desc')->all();
+
+        foreach ($teams as $team){
+            $team['members'] = $team->members;
+        }
+
         $teams = json_encode($teams);
 
         return view('welcome')
